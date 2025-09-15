@@ -109,7 +109,7 @@
       </div>
       <!-- Center Text -->
       <div class="flex flex-col items-center justify-center">
-        <h1 class="text-3xl md:text-4xl lg:text-4xl font-bold text-green-800 text-center">
+        <h1 class="text-2xl md:text-3xl font-semibold text-green-800 text-center">
           Plant a Tree, Grow a Future
         </h1>
         <p class="text-sm md:text-base text-[#000000] text-center">Join our mission to plant 1 million trees and make the Earth greener for future generations.</p>
@@ -120,6 +120,116 @@
         <img class="object-contain h-[300px]" src="assets/hero-leaf2.png" alt="" />
       </div>
     </div>
+
+    <!-- main section -->
+    <main class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-8">Choose Your Trees</h1>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 min-h-screen">
+        <!-- Left sidebar - Tree Categories -->
+        <div class="lg:col-span-2 w-full bg-white rounded-lg shadow-lg p-6">
+          <h2 class="text-xl font-bold text-gray-800 mb-6">Categories</h2>
+          <div id="category-buttons" class="w-full space-y-1">
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-green-600 text-white rounded-lg transition-colors duration-200 font-medium whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="all"
+            >
+              All Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="1"
+            >
+              Fruit Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="3"
+            >
+              Shade Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="2"
+            >
+              Flowering Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="6"
+            >
+              Evergreen Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="5"
+            >
+              Timber Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="4"
+            >
+              Medicinal Trees
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="7"
+            >
+              Ornamental Plants
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="8"
+            >
+              Bamboo
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="9"
+            >
+              Climbers
+            </button>
+            <button 
+              class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
+              data-category="10"
+            >
+              Aquatic Plants
+            </button>
+          </div>
+        </div>
+
+        <!-- Middle section - Tree Cards -->
+        <div class="lg:col-span-8 bg-white rounded-lg shadow-lg p-6">
+          <div id="loading" class="hidden text-center py-8">
+            <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
+            <p class="mt-4 text-gray-600">Loading trees...</p>
+          </div>
+          <div id="tree-cards" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
+            <!-- Tree cards will be populated here -->
+            <div class="text-center py-8 col-span-full">
+              <p class="text-gray-500">Loading all trees...</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right sidebar - Shopping Cart -->
+        <div class="lg:col-span-2 bg-white rounded-lg shadow-lg p-6 lg:sticky lg:top-4 lg:h-fit">
+          <h2 class="text-xl font-bold text-gray-800 mb-6">Your Cart</h2>
+          <div id="cart-items" class="space-y-3 mb-6 max-h-96 overflow-y-auto">
+            <!-- Cart items will be populated here -->
+            <div id="empty-cart" class="text-center py-8">
+              <p class="text-gray-500">Your cart is empty</p>
+            </div>
+          </div>
+          <div id="cart-total" class="border-t pt-4 hidden">
+            <div class="flex justify-between items-center font-bold text-lg">
+              <span>Total:</span>
+              <span id="total-amount" class="text-gray-800">৳1000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="assets/main.js"></script>
   </body>
