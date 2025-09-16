@@ -1,14 +1,11 @@
 console.log('main.js loaded');
 
-// API base URL
 const API_BASE_URL = 'https://openapi.programming-hero.com/api';
 
-// Shopping cart state
 let cart = [];
 let allPlants = [];
 let categories = [];
 
-// DOM elements
 const categoryButtons = document.querySelectorAll('.category-btn');
 const treeCardsContainer = document.getElementById('tree-cards');
 const cartItemsContainer = document.getElementById('cart-items');
@@ -17,18 +14,15 @@ const cartTotalSection = document.getElementById('cart-total');
 const emptyCartMessage = document.getElementById('empty-cart');
 const loadingIndicator = document.getElementById('loading');
 
-// Initialize the app
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Load categories and all plants
   loadCategories();
   loadAllPlants();
   
-  // Add event listeners to category buttons
   categoryButtons.forEach(button => {
     button.addEventListener('click', function() {
       const category = this.getAttribute('data-category');
       
-      // Update active button style
       categoryButtons.forEach(btn => {
         btn.classList.remove('bg-green-600', 'text-white');
         btn.classList.add('bg-gray-100', 'text-gray-700');
@@ -36,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
       this.classList.remove('bg-gray-100', 'text-gray-700');
       this.classList.add('bg-green-600', 'text-white');
       
-      // Fetch and display trees
       if (category === 'all') {
         displayTrees(allPlants);
       } else {
@@ -46,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// Load all categories
 async function loadCategories() {
   try {
     const response = await fetch(`${API_BASE_URL}/categories`);
@@ -58,7 +50,6 @@ async function loadCategories() {
   }
 }
 
-// Load all plants
 async function loadAllPlants() {
   try {
     showLoading();
@@ -75,7 +66,6 @@ async function loadAllPlants() {
   }
 }
 
-// Fetch plants by category
 async function fetchPlantsByCategory(categoryId) {
   try {
     showLoading();
@@ -91,18 +81,15 @@ async function fetchPlantsByCategory(categoryId) {
   }
 }
 
-// Show loading indicator
 function showLoading() {
   loadingIndicator.classList.remove('hidden');
   treeCardsContainer.innerHTML = '';
 }
 
-// Hide loading indicator
 function hideLoading() {
   loadingIndicator.classList.add('hidden');
 }
 
-// Display trees in cards
 function displayTrees(plants) {
   if (!plants || plants.length === 0) {
     treeCardsContainer.innerHTML = '<div class="col-span-full text-center py-8"><p class="text-gray-500">No plants found in this category</p></div>';
@@ -137,7 +124,6 @@ function displayTrees(plants) {
   treeCardsContainer.innerHTML = cardsHTML;
 }
 
-// Add item to cart
 function addToCart(id, name, price) {
   const existingItem = cart.find(item => item.id === id);
   
@@ -155,13 +141,11 @@ function addToCart(id, name, price) {
   updateCartDisplay();
 }
 
-// Remove item from cart
 function removeFromCart(id) {
   cart = cart.filter(item => item.id !== id);
   updateCartDisplay();
 }
 
-// Update cart display
 function updateCartDisplay() {
   if (cart.length === 0) {
     emptyCartMessage.classList.remove('hidden');
