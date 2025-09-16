@@ -126,12 +126,12 @@
       <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-8">Choose Your Trees</h1>
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 min-h-screen">
         <!-- Left sidebar - Tree Categories -->
-        <div class="lg:col-span-2 w-full bg-white rounded-lg shadow-lg p-4 md:p-6">
+        <div class="lg:col-span-2 w-full bg-white p-4 md:p-6">
           <h2 class="text-lg md:text-xl font-bold text-gray-800 mb-4 md:mb-6">Categories</h2>
           <div id="category-buttons" class="w-full space-y-1 overflow-x-auto lg:overflow-x-visible">
-            <div class="flex lg:flex-col space-x-2 lg:space-x-0 lg:space-y-1 pb-2 lg:pb-0">
+            <div class="flex flex-col space-x-2 lg:space-x-0 space-y-1 pb-2 lg:pb-0">
             <button 
-              class="category-btn flex-shrink-0 lg:w-full px-3 md:px-4 py-2 text-left bg-green-600 text-white rounded-lg transition-colors duration-200 font-medium whitespace-nowrap"
+              class="category-btn flex-shrink-0 lg:w-full px-3 md:px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap"
               data-category="all"
             >
               All Trees
@@ -187,14 +187,11 @@
             <button 
               class="category-btn w-full px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap overflow-hidden text-ellipsis"
               data-category="9"
-            <button 
-              class="category-btn flex-shrink-0 lg:w-full px-3 md:px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap"
-              data-category="8"
             >
               Climbers
             </button>
             <button 
-              class="category-btn flex-shrink-0 lg:w-full px-3 md:px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap"
+              class="category-btn flex-shrink-0 w-full px-3 md:px-4 py-2 text-left bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 font-medium text-gray-700 whitespace-nowrap"
               data-category="10"
             >
               Aquatic Plants
@@ -203,7 +200,7 @@
         </div>
 
         <!-- Middle section - Tree Cards -->
-        <div class="lg:col-span-8 bg-white rounded-lg shadow-lg p-4 md:p-6">
+        <div class="lg:col-span-8 bg-white p-4 md:p-6">
           <div id="loading" class="hidden text-center py-8">
             <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto"></div>
             <p class="mt-4 text-gray-600">Loading trees...</p>
@@ -217,7 +214,7 @@
         </div>
 
         <!-- Right sidebar - Shopping Cart -->
-        <div class="lg:col-span-2 bg-white rounded-lg shadow-lg p-4 md:p-6 lg:sticky lg:top-4 lg:h-fit">
+        <div class="lg:col-span-2 bg-white p-4 md:p-6 lg:sticky lg:top-4 lg:h-fit">
           <h2 class="text-lg md:text-xl font-bold text-gray-800 mb-4 md:mb-6">Your Cart</h2>
           <div id="cart-items" class="space-y-3 mb-6 max-h-96 overflow-y-auto">
             <!-- Cart items will be populated here -->
